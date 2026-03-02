@@ -14,14 +14,9 @@ import verifyToken from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-router.get("/featured", verifyToken, verifyIsAdmin, getFeaaturedBusinnesses);
-router.get(
-  "/investments",
-  verifyToken,
-  verifyIsAdmin,
-  getIInnvestmentBusinesses,
-);
-router.get("/", verifyToken, verifyIsAdmin, getAllBusinesses);
+router.get("/featured", getFeaaturedBusinnesses);
+router.get("/investments", getIInnvestmentBusinesses);
+router.get("/", getAllBusinesses);
 router.get("/:id", verifyToken, verifyIsAdmin, getBusiness);
 router.post(
   "/",

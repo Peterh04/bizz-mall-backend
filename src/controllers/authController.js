@@ -62,7 +62,7 @@ export const login = async (req, res) => {
         httpOnly: true,
         secure: isProduction ? true : false,
         sameSite: isProduction ? "strict" : "lax",
-        path: "/admin",
+        path: "/",
       });
       return res.status(200).json({
         message: "Admin login successfully",
